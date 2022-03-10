@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module asteroids</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>asteroids</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cuser%5Cdesktop%5Claborki_2%5Cprogramowanie%5Casteroids%5Cgra%5Casteroids.py">c:\users\user\desktop\laborki_2\programowanie\asteroids\gra\asteroids.py</a></font></td></tr></table>
+    <p><tt>#grafika&nbsp;+&nbsp;dźwięk:&nbsp;kenney.nl&nbsp;-&nbsp;licencja&nbsp;w&nbsp;folderze&nbsp;needed</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="pygame.html">pygame</a><br>
+</td><td width="25%" valign=top><a href="random.html">random</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="asteroids.html#Button">Button</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="pygame.sprite.html#Sprite">pygame.sprite.Sprite</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="asteroids.html#Asteroids">Asteroids</a>
+</font></dt><dt><font face="helvetica, arial"><a href="asteroids.html#ShipBullet">ShipBullet</a>
+</font></dt><dt><font face="helvetica, arial"><a href="asteroids.html#ShipPlayer">ShipPlayer</a>
+</font></dt><dt><font face="helvetica, arial"><a href="asteroids.html#scoreBoard">scoreBoard</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Asteroids">class <strong>Asteroids</strong></a>(<a href="pygame.sprite.html#Sprite">pygame.sprite.Sprite</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Asteroids">Asteroids</a>(counter=0,&nbsp;startpos=(0,&nbsp;0))<br>
+&nbsp;<br>
+asteroids&nbsp;class,&nbsp;has&nbsp;all&nbsp;atributes&nbsp;from&nbsp;pygame&nbsp;sprite<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="asteroids.html#Asteroids">Asteroids</a></dd>
+<dd><a href="pygame.sprite.html#Sprite">pygame.sprite.Sprite</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Asteroids-__init__"><strong>__init__</strong></a>(self, counter=0, startpos=(0, 0))</dt><dd><tt>initializing&nbsp;an&nbsp;asteroid<br>
+atributes:&nbsp;couter&nbsp;-&nbsp;size&nbsp;of&nbsp;an&nbsp;asteroid,&nbsp;startpos&nbsp;-&nbsp;start&nbsp;position</tt></dd></dl>
+
+<dl><dt><a name="Asteroids-update"><strong>update</strong></a>(self)</dt><dd><tt>updates&nbsp;for&nbsp;asteroid&nbsp;class</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="pygame.sprite.html#Sprite">pygame.sprite.Sprite</a>:<br>
+<dl><dt><a name="Asteroids-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="Asteroids-add"><strong>add</strong></a>(self, *groups)</dt><dd><tt>add&nbsp;the&nbsp;sprite&nbsp;to&nbsp;groups<br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#Asteroids-add">add</a>(*groups):&nbsp;return&nbsp;None<br>
+&nbsp;<br>
+Any&nbsp;number&nbsp;of&nbsp;Group&nbsp;instances&nbsp;can&nbsp;be&nbsp;passed&nbsp;as&nbsp;arguments.&nbsp;The<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;will&nbsp;be&nbsp;added&nbsp;to&nbsp;the&nbsp;Groups&nbsp;it&nbsp;is&nbsp;not&nbsp;already&nbsp;a&nbsp;member&nbsp;of.</tt></dd></dl>
+
+<dl><dt><a name="Asteroids-add_internal"><strong>add_internal</strong></a>(self, group)</dt></dl>
+
+<dl><dt><a name="Asteroids-alive"><strong>alive</strong></a>(self)</dt><dd><tt>does&nbsp;the&nbsp;sprite&nbsp;belong&nbsp;to&nbsp;any&nbsp;groups<br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#Asteroids-alive">alive</a>():&nbsp;return&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;True&nbsp;when&nbsp;the&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;belongs&nbsp;to&nbsp;one&nbsp;or&nbsp;more&nbsp;Groups.</tt></dd></dl>
+
+<dl><dt><a name="Asteroids-groups"><strong>groups</strong></a>(self)</dt><dd><tt>list&nbsp;of&nbsp;Groups&nbsp;that&nbsp;contain&nbsp;this&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a><br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#Asteroids-groups">groups</a>():&nbsp;return&nbsp;group_list<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;the&nbsp;Groups&nbsp;that&nbsp;contain&nbsp;this&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>.</tt></dd></dl>
+
+<dl><dt><a name="Asteroids-kill"><strong>kill</strong></a>(self)</dt><dd><tt>remove&nbsp;the&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;from&nbsp;all&nbsp;Groups<br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#Asteroids-kill">kill</a>():&nbsp;return&nbsp;None<br>
+&nbsp;<br>
+The&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;is&nbsp;removed&nbsp;from&nbsp;all&nbsp;the&nbsp;Groups&nbsp;that&nbsp;contain&nbsp;it.&nbsp;This&nbsp;won't<br>
+change&nbsp;anything&nbsp;about&nbsp;the&nbsp;state&nbsp;of&nbsp;the&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>.&nbsp;It&nbsp;is&nbsp;possible&nbsp;to<br>
+continue&nbsp;to&nbsp;use&nbsp;the&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;after&nbsp;this&nbsp;method&nbsp;has&nbsp;been&nbsp;called,&nbsp;including<br>
+adding&nbsp;it&nbsp;to&nbsp;Groups.</tt></dd></dl>
+
+<dl><dt><a name="Asteroids-remove"><strong>remove</strong></a>(self, *groups)</dt><dd><tt>remove&nbsp;the&nbsp;sprite&nbsp;from&nbsp;groups<br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#Asteroids-remove">remove</a>(*groups):&nbsp;return&nbsp;None<br>
+&nbsp;<br>
+Any&nbsp;number&nbsp;of&nbsp;Group&nbsp;instances&nbsp;can&nbsp;be&nbsp;passed&nbsp;as&nbsp;arguments.&nbsp;The&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a><br>
+will&nbsp;be&nbsp;removed&nbsp;from&nbsp;the&nbsp;Groups&nbsp;it&nbsp;is&nbsp;currently&nbsp;a&nbsp;member&nbsp;of.</tt></dd></dl>
+
+<dl><dt><a name="Asteroids-remove_internal"><strong>remove_internal</strong></a>(self, group)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="pygame.sprite.html#Sprite">pygame.sprite.Sprite</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Button">class <strong>Button</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Button">Button</a>(x,&nbsp;y,&nbsp;width,&nbsp;height,&nbsp;text,&nbsp;textcolor,&nbsp;backgroundcolor)<br>
+&nbsp;<br>
+class&nbsp;for&nbsp;the&nbsp;buttons<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Button-__init__"><strong>__init__</strong></a>(self, x, y, width, height, text, textcolor, backgroundcolor)</dt><dd><tt>initializing&nbsp;the&nbsp;class<br>
+atributes:<br>
+x,&nbsp;y&nbsp;-&nbsp;placing&nbsp;the&nbsp;button&nbsp;on&nbsp;the&nbsp;screen<br>
+width,&nbsp;height&nbsp;-&nbsp;size&nbsp;of&nbsp;the&nbsp;button<br>
+text&nbsp;-&nbsp;text&nbsp;on&nbsp;the&nbsp;button<br>
+textcolor,&nbsp;backgroundcolor&nbsp;-&nbsp;colors&nbsp;of&nbsp;the&nbsp;button</tt></dd></dl>
+
+<dl><dt><a name="Button-check"><strong>check</strong></a>(self)</dt><dd><tt>Function&nbsp;to&nbsp;check&nbsp;if&nbsp;the&nbsp;mouse&nbsp;position&nbsp;is&nbsp;on&nbsp;the&nbsp;button</tt></dd></dl>
+
+<dl><dt><a name="Button-draw"><strong>draw</strong></a>(self, screen)</dt><dd><tt>function&nbsp;to&nbsp;draw&nbsp;the&nbsp;button&nbsp;on&nbsp;the&nbsp;screen&nbsp;given&nbsp;as&nbsp;an&nbsp;atribute</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ShipBullet">class <strong>ShipBullet</strong></a>(<a href="pygame.sprite.html#Sprite">pygame.sprite.Sprite</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#ShipBullet">ShipBullet</a>(startpos=(0,&nbsp;0),&nbsp;direction=(0,&nbsp;0),&nbsp;angle=0)<br>
+&nbsp;<br>
+Player&nbsp;laser&nbsp;class,&nbsp;has&nbsp;all&nbsp;atributes&nbsp;from&nbsp;pygame&nbsp;sprite<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="asteroids.html#ShipBullet">ShipBullet</a></dd>
+<dd><a href="pygame.sprite.html#Sprite">pygame.sprite.Sprite</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ShipBullet-__init__"><strong>__init__</strong></a>(self, startpos=(0, 0), direction=(0, 0), angle=0)</dt><dd><tt>initializing&nbsp;a&nbsp;laser<br>
+atributes:&nbsp;start&nbsp;position,&nbsp;direction,&nbsp;angle&nbsp;of&nbsp;rotation</tt></dd></dl>
+
+<dl><dt><a name="ShipBullet-update"><strong>update</strong></a>(self)</dt><dd><tt>updates&nbsp;for&nbsp;the&nbsp;class</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="pygame.sprite.html#Sprite">pygame.sprite.Sprite</a>:<br>
+<dl><dt><a name="ShipBullet-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="ShipBullet-add"><strong>add</strong></a>(self, *groups)</dt><dd><tt>add&nbsp;the&nbsp;sprite&nbsp;to&nbsp;groups<br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#ShipBullet-add">add</a>(*groups):&nbsp;return&nbsp;None<br>
+&nbsp;<br>
+Any&nbsp;number&nbsp;of&nbsp;Group&nbsp;instances&nbsp;can&nbsp;be&nbsp;passed&nbsp;as&nbsp;arguments.&nbsp;The<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;will&nbsp;be&nbsp;added&nbsp;to&nbsp;the&nbsp;Groups&nbsp;it&nbsp;is&nbsp;not&nbsp;already&nbsp;a&nbsp;member&nbsp;of.</tt></dd></dl>
+
+<dl><dt><a name="ShipBullet-add_internal"><strong>add_internal</strong></a>(self, group)</dt></dl>
+
+<dl><dt><a name="ShipBullet-alive"><strong>alive</strong></a>(self)</dt><dd><tt>does&nbsp;the&nbsp;sprite&nbsp;belong&nbsp;to&nbsp;any&nbsp;groups<br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#ShipBullet-alive">alive</a>():&nbsp;return&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;True&nbsp;when&nbsp;the&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;belongs&nbsp;to&nbsp;one&nbsp;or&nbsp;more&nbsp;Groups.</tt></dd></dl>
+
+<dl><dt><a name="ShipBullet-groups"><strong>groups</strong></a>(self)</dt><dd><tt>list&nbsp;of&nbsp;Groups&nbsp;that&nbsp;contain&nbsp;this&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a><br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#ShipBullet-groups">groups</a>():&nbsp;return&nbsp;group_list<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;the&nbsp;Groups&nbsp;that&nbsp;contain&nbsp;this&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>.</tt></dd></dl>
+
+<dl><dt><a name="ShipBullet-kill"><strong>kill</strong></a>(self)</dt><dd><tt>remove&nbsp;the&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;from&nbsp;all&nbsp;Groups<br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#ShipBullet-kill">kill</a>():&nbsp;return&nbsp;None<br>
+&nbsp;<br>
+The&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;is&nbsp;removed&nbsp;from&nbsp;all&nbsp;the&nbsp;Groups&nbsp;that&nbsp;contain&nbsp;it.&nbsp;This&nbsp;won't<br>
+change&nbsp;anything&nbsp;about&nbsp;the&nbsp;state&nbsp;of&nbsp;the&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>.&nbsp;It&nbsp;is&nbsp;possible&nbsp;to<br>
+continue&nbsp;to&nbsp;use&nbsp;the&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;after&nbsp;this&nbsp;method&nbsp;has&nbsp;been&nbsp;called,&nbsp;including<br>
+adding&nbsp;it&nbsp;to&nbsp;Groups.</tt></dd></dl>
+
+<dl><dt><a name="ShipBullet-remove"><strong>remove</strong></a>(self, *groups)</dt><dd><tt>remove&nbsp;the&nbsp;sprite&nbsp;from&nbsp;groups<br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#ShipBullet-remove">remove</a>(*groups):&nbsp;return&nbsp;None<br>
+&nbsp;<br>
+Any&nbsp;number&nbsp;of&nbsp;Group&nbsp;instances&nbsp;can&nbsp;be&nbsp;passed&nbsp;as&nbsp;arguments.&nbsp;The&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a><br>
+will&nbsp;be&nbsp;removed&nbsp;from&nbsp;the&nbsp;Groups&nbsp;it&nbsp;is&nbsp;currently&nbsp;a&nbsp;member&nbsp;of.</tt></dd></dl>
+
+<dl><dt><a name="ShipBullet-remove_internal"><strong>remove_internal</strong></a>(self, group)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="pygame.sprite.html#Sprite">pygame.sprite.Sprite</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ShipPlayer">class <strong>ShipPlayer</strong></a>(<a href="pygame.sprite.html#Sprite">pygame.sprite.Sprite</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#ShipPlayer">ShipPlayer</a>(pos=(512.0,&nbsp;384.0))<br>
+&nbsp;<br>
+Player&nbsp;class,&nbsp;has&nbsp;all&nbsp;atributes&nbsp;from&nbsp;pygame&nbsp;sprite<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="asteroids.html#ShipPlayer">ShipPlayer</a></dd>
+<dd><a href="pygame.sprite.html#Sprite">pygame.sprite.Sprite</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ShipPlayer-__init__"><strong>__init__</strong></a>(self, pos=(512.0, 384.0))</dt><dd><tt>initializing&nbsp;a&nbsp;player&nbsp;ship&nbsp;with&nbsp;starting&nbsp;position&nbsp;in&nbsp;the&nbsp;middle</tt></dd></dl>
+
+<dl><dt><a name="ShipPlayer-update"><strong>update</strong></a>(self)</dt><dd><tt>updating&nbsp;the&nbsp;position&nbsp;and&nbsp;direction&nbsp;of&nbsp;the&nbsp;ship</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="pygame.sprite.html#Sprite">pygame.sprite.Sprite</a>:<br>
+<dl><dt><a name="ShipPlayer-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="ShipPlayer-add"><strong>add</strong></a>(self, *groups)</dt><dd><tt>add&nbsp;the&nbsp;sprite&nbsp;to&nbsp;groups<br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#ShipPlayer-add">add</a>(*groups):&nbsp;return&nbsp;None<br>
+&nbsp;<br>
+Any&nbsp;number&nbsp;of&nbsp;Group&nbsp;instances&nbsp;can&nbsp;be&nbsp;passed&nbsp;as&nbsp;arguments.&nbsp;The<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;will&nbsp;be&nbsp;added&nbsp;to&nbsp;the&nbsp;Groups&nbsp;it&nbsp;is&nbsp;not&nbsp;already&nbsp;a&nbsp;member&nbsp;of.</tt></dd></dl>
+
+<dl><dt><a name="ShipPlayer-add_internal"><strong>add_internal</strong></a>(self, group)</dt></dl>
+
+<dl><dt><a name="ShipPlayer-alive"><strong>alive</strong></a>(self)</dt><dd><tt>does&nbsp;the&nbsp;sprite&nbsp;belong&nbsp;to&nbsp;any&nbsp;groups<br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#ShipPlayer-alive">alive</a>():&nbsp;return&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;True&nbsp;when&nbsp;the&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;belongs&nbsp;to&nbsp;one&nbsp;or&nbsp;more&nbsp;Groups.</tt></dd></dl>
+
+<dl><dt><a name="ShipPlayer-groups"><strong>groups</strong></a>(self)</dt><dd><tt>list&nbsp;of&nbsp;Groups&nbsp;that&nbsp;contain&nbsp;this&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a><br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#ShipPlayer-groups">groups</a>():&nbsp;return&nbsp;group_list<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;the&nbsp;Groups&nbsp;that&nbsp;contain&nbsp;this&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>.</tt></dd></dl>
+
+<dl><dt><a name="ShipPlayer-kill"><strong>kill</strong></a>(self)</dt><dd><tt>remove&nbsp;the&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;from&nbsp;all&nbsp;Groups<br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#ShipPlayer-kill">kill</a>():&nbsp;return&nbsp;None<br>
+&nbsp;<br>
+The&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;is&nbsp;removed&nbsp;from&nbsp;all&nbsp;the&nbsp;Groups&nbsp;that&nbsp;contain&nbsp;it.&nbsp;This&nbsp;won't<br>
+change&nbsp;anything&nbsp;about&nbsp;the&nbsp;state&nbsp;of&nbsp;the&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>.&nbsp;It&nbsp;is&nbsp;possible&nbsp;to<br>
+continue&nbsp;to&nbsp;use&nbsp;the&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;after&nbsp;this&nbsp;method&nbsp;has&nbsp;been&nbsp;called,&nbsp;including<br>
+adding&nbsp;it&nbsp;to&nbsp;Groups.</tt></dd></dl>
+
+<dl><dt><a name="ShipPlayer-remove"><strong>remove</strong></a>(self, *groups)</dt><dd><tt>remove&nbsp;the&nbsp;sprite&nbsp;from&nbsp;groups<br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#ShipPlayer-remove">remove</a>(*groups):&nbsp;return&nbsp;None<br>
+&nbsp;<br>
+Any&nbsp;number&nbsp;of&nbsp;Group&nbsp;instances&nbsp;can&nbsp;be&nbsp;passed&nbsp;as&nbsp;arguments.&nbsp;The&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a><br>
+will&nbsp;be&nbsp;removed&nbsp;from&nbsp;the&nbsp;Groups&nbsp;it&nbsp;is&nbsp;currently&nbsp;a&nbsp;member&nbsp;of.</tt></dd></dl>
+
+<dl><dt><a name="ShipPlayer-remove_internal"><strong>remove_internal</strong></a>(self, group)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="pygame.sprite.html#Sprite">pygame.sprite.Sprite</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="scoreBoard">class <strong>scoreBoard</strong></a>(<a href="pygame.sprite.html#Sprite">pygame.sprite.Sprite</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;for&nbsp;the&nbsp;score&nbsp;board,&nbsp;has&nbsp;all&nbsp;atributes&nbsp;from&nbsp;pygame&nbsp;sprite<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="asteroids.html#scoreBoard">scoreBoard</a></dd>
+<dd><a href="pygame.sprite.html#Sprite">pygame.sprite.Sprite</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="scoreBoard-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>initializing&nbsp;the&nbsp;board</tt></dd></dl>
+
+<dl><dt><a name="scoreBoard-update"><strong>update</strong></a>(self, score, level, lives)</dt><dd><tt>updating&nbsp;the&nbsp;score<br>
+atributes:&nbsp;actual&nbsp;score&nbsp;level&nbsp;and&nbsp;remaining&nbsp;lives</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="pygame.sprite.html#Sprite">pygame.sprite.Sprite</a>:<br>
+<dl><dt><a name="scoreBoard-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="scoreBoard-add"><strong>add</strong></a>(self, *groups)</dt><dd><tt>add&nbsp;the&nbsp;sprite&nbsp;to&nbsp;groups<br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#scoreBoard-add">add</a>(*groups):&nbsp;return&nbsp;None<br>
+&nbsp;<br>
+Any&nbsp;number&nbsp;of&nbsp;Group&nbsp;instances&nbsp;can&nbsp;be&nbsp;passed&nbsp;as&nbsp;arguments.&nbsp;The<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;will&nbsp;be&nbsp;added&nbsp;to&nbsp;the&nbsp;Groups&nbsp;it&nbsp;is&nbsp;not&nbsp;already&nbsp;a&nbsp;member&nbsp;of.</tt></dd></dl>
+
+<dl><dt><a name="scoreBoard-add_internal"><strong>add_internal</strong></a>(self, group)</dt></dl>
+
+<dl><dt><a name="scoreBoard-alive"><strong>alive</strong></a>(self)</dt><dd><tt>does&nbsp;the&nbsp;sprite&nbsp;belong&nbsp;to&nbsp;any&nbsp;groups<br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#scoreBoard-alive">alive</a>():&nbsp;return&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;True&nbsp;when&nbsp;the&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;belongs&nbsp;to&nbsp;one&nbsp;or&nbsp;more&nbsp;Groups.</tt></dd></dl>
+
+<dl><dt><a name="scoreBoard-groups"><strong>groups</strong></a>(self)</dt><dd><tt>list&nbsp;of&nbsp;Groups&nbsp;that&nbsp;contain&nbsp;this&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a><br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#scoreBoard-groups">groups</a>():&nbsp;return&nbsp;group_list<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;the&nbsp;Groups&nbsp;that&nbsp;contain&nbsp;this&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>.</tt></dd></dl>
+
+<dl><dt><a name="scoreBoard-kill"><strong>kill</strong></a>(self)</dt><dd><tt>remove&nbsp;the&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;from&nbsp;all&nbsp;Groups<br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#scoreBoard-kill">kill</a>():&nbsp;return&nbsp;None<br>
+&nbsp;<br>
+The&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;is&nbsp;removed&nbsp;from&nbsp;all&nbsp;the&nbsp;Groups&nbsp;that&nbsp;contain&nbsp;it.&nbsp;This&nbsp;won't<br>
+change&nbsp;anything&nbsp;about&nbsp;the&nbsp;state&nbsp;of&nbsp;the&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>.&nbsp;It&nbsp;is&nbsp;possible&nbsp;to<br>
+continue&nbsp;to&nbsp;use&nbsp;the&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a>&nbsp;after&nbsp;this&nbsp;method&nbsp;has&nbsp;been&nbsp;called,&nbsp;including<br>
+adding&nbsp;it&nbsp;to&nbsp;Groups.</tt></dd></dl>
+
+<dl><dt><a name="scoreBoard-remove"><strong>remove</strong></a>(self, *groups)</dt><dd><tt>remove&nbsp;the&nbsp;sprite&nbsp;from&nbsp;groups<br>
+&nbsp;<br>
+<a href="pygame.sprite.html#Sprite">Sprite</a>.<a href="#scoreBoard-remove">remove</a>(*groups):&nbsp;return&nbsp;None<br>
+&nbsp;<br>
+Any&nbsp;number&nbsp;of&nbsp;Group&nbsp;instances&nbsp;can&nbsp;be&nbsp;passed&nbsp;as&nbsp;arguments.&nbsp;The&nbsp;<a href="pygame.sprite.html#Sprite">Sprite</a><br>
+will&nbsp;be&nbsp;removed&nbsp;from&nbsp;the&nbsp;Groups&nbsp;it&nbsp;is&nbsp;currently&nbsp;a&nbsp;member&nbsp;of.</tt></dd></dl>
+
+<dl><dt><a name="scoreBoard-remove_internal"><strong>remove_internal</strong></a>(self, group)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="pygame.sprite.html#Sprite">pygame.sprite.Sprite</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-about_me"><strong>about_me</strong></a>(screen)</dt><dd><tt>function&nbsp;to&nbsp;display&nbsp;informations&nbsp;about&nbsp;the&nbsp;author&nbsp;of&nbsp;the&nbsp;game&nbsp;on&nbsp;the&nbsp;screen&nbsp;given&nbsp;as&nbsp;an&nbsp;atribute</tt></dd></dl>
+ <dl><dt><a name="-best_score"><strong>best_score</strong></a>(screen)</dt><dd><tt>function&nbsp;that&nbsp;shows&nbsp;the&nbsp;best&nbsp;scores&nbsp;on&nbsp;screen&nbsp;given&nbsp;as&nbsp;atribute</tt></dd></dl>
+ <dl><dt><a name="-createAsteroids"><strong>createAsteroids</strong></a>(level)</dt><dd><tt>Function&nbsp;to&nbsp;create&nbsp;the&nbsp;right&nbsp;amount&nbsp;of&nbsp;asteroids<br>
+atributes:&nbsp;level</tt></dd></dl>
+ <dl><dt><a name="-draw_text"><strong>draw_text</strong></a>(text, font, color, surface, x, y)</dt><dd><tt>function&nbsp;to&nbsp;display&nbsp;the&nbsp;text&nbsp;and&nbsp;know&nbsp;where&nbsp;the&nbsp;center&nbsp;of&nbsp;it&nbsp;is<br>
+atributes:<br>
+text,&nbsp;font&nbsp;-&nbsp;text&nbsp;as&nbsp;a&nbsp;string,&nbsp;font&nbsp;as&nbsp;pygame&nbsp;font&nbsp;(with&nbsp;size)<br>
+color&nbsp;-&nbsp;text&nbsp;color&nbsp;(in&nbsp;rgb)<br>
+surface&nbsp;-&nbsp;screen&nbsp;to&nbsp;be&nbsp;displayed&nbsp;on<br>
+x,&nbsp;y,&nbsp;-&nbsp;placing&nbsp;the&nbsp;text</tt></dd></dl>
+ <dl><dt><a name="-draw_text_center"><strong>draw_text_center</strong></a>(text, font, screen, x, y, color)</dt><dd><tt>function&nbsp;to&nbsp;display&nbsp;the&nbsp;text&nbsp;and&nbsp;know&nbsp;where&nbsp;the&nbsp;center&nbsp;of&nbsp;it&nbsp;is<br>
+atributes:<br>
+text,&nbsp;font&nbsp;-&nbsp;text&nbsp;as&nbsp;a&nbsp;string,&nbsp;font&nbsp;as&nbsp;pygame&nbsp;font&nbsp;(with&nbsp;size)<br>
+screen&nbsp;-&nbsp;screen&nbsp;to&nbsp;be&nbsp;displayed&nbsp;on<br>
+x,&nbsp;y,&nbsp;color&nbsp;-&nbsp;placing&nbsp;the&nbsp;text&nbsp;and&nbsp;it's&nbsp;color</tt></dd></dl>
+ <dl><dt><a name="-game_loop"><strong>game_loop</strong></a>(screen)</dt><dd><tt>function&nbsp;with&nbsp;the&nbsp;game&nbsp;loop,&nbsp;containing&nbsp;all&nbsp;the&nbsp;actions<br>
+and&nbsp;sprite&nbsp;collisions&nbsp;in,&nbsp;atribute:&nbsp;screen&nbsp;to&nbsp;display</tt></dd></dl>
+ <dl><dt><a name="-game_over"><strong>game_over</strong></a>(screen, score)</dt><dd><tt>function&nbsp;to&nbsp;run&nbsp;when&nbsp;game&nbsp;is&nbsp;over<br>
+atributes:&nbsp;screen,&nbsp;score&nbsp;to&nbsp;save&nbsp;and&nbsp;display&nbsp;for&nbsp;user</tt></dd></dl>
+ <dl><dt><a name="-loadImage"><strong>loadImage</strong></a>(name, useColorKey=False)</dt><dd><tt>function&nbsp;to&nbsp;load&nbsp;an&nbsp;image,<br>
+atributes:&nbsp;name&nbsp;-&nbsp;image&nbsp;name,&nbsp;useColorKey&nbsp;=&nbsp;False<br>
+returns&nbsp;an&nbsp;image</tt></dd></dl>
+ <dl><dt><a name="-loadSound"><strong>loadSound</strong></a>(name)</dt><dd><tt>Function&nbsp;to&nbsp;load&nbsp;sound<br>
+atributes:&nbsp;name&nbsp;-&nbsp;sound&nbsp;name<br>
+returns&nbsp;sound</tt></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt><dd><tt>main&nbsp;function&nbsp;to&nbsp;initialize&nbsp;the&nbsp;window</tt></dd></dl>
+ <dl><dt><a name="-main_menu"><strong>main_menu</strong></a>(screen)</dt><dd><tt>function&nbsp;to&nbsp;display&nbsp;the&nbsp;main&nbsp;menu&nbsp;of&nbsp;the&nbsp;game&nbsp;on&nbsp;the&nbsp;screen&nbsp;given&nbsp;as&nbsp;an&nbsp;atribute</tt></dd></dl>
+ <dl><dt><a name="-rules"><strong>rules</strong></a>(screen)</dt><dd><tt>function&nbsp;to&nbsp;display&nbsp;the&nbsp;rules&nbsp;of&nbsp;the&nbsp;game&nbsp;on&nbsp;the&nbsp;screen&nbsp;given&nbsp;as&nbsp;an&nbsp;atribute</tt></dd></dl>
+ <dl><dt><a name="-save_score"><strong>save_score</strong></a>(score)</dt><dd><tt>function&nbsp;to&nbsp;save&nbsp;the&nbsp;score&nbsp;to&nbsp;file</tt></dd></dl>
+ <dl><dt><a name="-top_score"><strong>top_score</strong></a>()</dt><dd><tt>function&nbsp;to&nbsp;pick&nbsp;three&nbsp;best&nbsp;scores</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>ASTEROIDS</strong> = ['meteorGrey_big3.png', 'meteorGrey_med2.png', 'meteorGrey_small1.png']<br>
+<strong>ASTEROIDS_POS</strong> = [(768, 724), (6, 0), (549, 1024)]<br>
+<strong>BLACK</strong> = (0, 0, 0)<br>
+<strong>SCREEN_HEIGHT</strong> = 768<br>
+<strong>SCREEN_TITLE</strong> = 'Asteroids'<br>
+<strong>SCREEN_WIDTH</strong> = 1024<br>
+<strong>WHITE</strong> = (255, 255, 255)<br>
+<strong>level</strong> = 1</td></tr></table>
+</body></html>
